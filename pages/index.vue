@@ -1,7 +1,12 @@
 <template>
   <div id="posts-container">
-    <div class="posts" v-for= "post in posts" :key= "post.slug" :style= "{ backgroundImage: `url(${post.image})`, backgroundSize: 'cover'}">
-      <nuxt-link :to="`/${post.slug}`" > <h3>{{ post.title }}</h3> </nuxt-link>
+    <div class="posts" v-for= "post in posts" :key= "post.slug" :style= "{ backgroundSize: 'cover'}">
+      <nuxt-link :to="`/${post.slug}`" > <h3>{{ post.title }}</h3> 
+      <div class="imgContainer" :style= "{backgroundImage: `url(${post.image})`}">
+
+      </div>
+      
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -19,36 +24,42 @@
 <style>
   #posts-container {
     display: flex;
-    flex-direction: column;
-    flex: 1 1 300px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   .posts {
-    height: 15vmax;
-    margin: 0.3em;
-    border-radius: 1em;
+    height: auto;
+    margin: 1em;
+    border-radius: 0 1em 0 0;
     /* border: 0.15em solid black; */
+    background: white;
+    min-width: 30%;
 
   }
 
   .posts:hover {
-    animation: grow 3s forwards;
+    background: black;
   }
 
-  @keyframes grow {
-    100% {
-      height: 30vmax;
-    }
-  }
 
   .posts h3 {
     font-size: 1.5em;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: black;
     color: white;
-    border-radius: 0.2em;
     text-align: center;
     padding: 0.3em;
-    font-family: 'Abril Fatface', serif;
-    margin: 0.3em;
+    font-family: 'Open-sans', sans-serif;
+    margin-top: 1em;
   }
+
+  .imgContainer {
+    height: 20vmax;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 1em;
+  }
+
 </style>

@@ -1,20 +1,27 @@
 <template>
     <nav>
-        <nuxt-link :to="`/`"><h1>Brandon and Criss Photo Blog</h1></nuxt-link>
+        <nuxt-link :to="`/`"><h1>B | C</h1></nuxt-link>
+        <h2>Photography Blog</h2>
     </nav>
 </template>
 
-<style>
+<style scoped>
     nav {
         justify-self: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     h1 {
-        font-size: 2em;
-        margin: 1em;
+        font-size: 10vmax;
         text-align: center;
-        font-family: 'Abril Fatface', serif
     }
 
+    h2 {
+        font-size: 2em;
+    }
     
 </style>
